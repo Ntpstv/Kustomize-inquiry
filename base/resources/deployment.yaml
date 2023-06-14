@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: example-service
-          image: asia.gcr.io/poc-innovation-iot/example-service:latest
+          image: asia.gcr.io/poc-innovation-iot/example-service:TAG
           imagePullPolicy: IfNotPresent
           ports:
             - name: http

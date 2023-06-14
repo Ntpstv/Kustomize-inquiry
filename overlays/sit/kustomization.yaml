@@ -6,5 +6,6 @@ resources:
 
 images:
 - name: asia.gcr.io/poc-innovation-iot/example-service:latest
+  newTag: latest
   # newName: asia.gcr.io/oapi-gateway-sit/direct-credit-on-us
   # newTag: 0df2ca4e
