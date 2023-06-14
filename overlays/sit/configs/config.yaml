@@ -1,0 +1,38 @@
+# don't forget to update config.model
+environment: local
+
+server:
+  port: 8080
+  writetimeout: 15
+  readtimeout: 15
+  idletimeout: 60
+  ctx-timeout: 10
+  force-retry: true
+
+log:
+  environment: dev
+  level: info
+
+postgres:
+  db-name: management_api_gw
+  host: 34.126.178.29
+  port: 5432
+  pool-size: 30
+
+token:
+  type: BEARER
+  expired-in-second: 300
+  refresh-expired-in-second: 86400
+
+secrets:
+  redis-password:
+  db-user: appusr
+  db-password: BftrLn2ytf
+  token-secret: 3s6v9y/B?E(H+MbQeThWmZq4t7w!z%C&
+  refresh-token-secret: fUjXn2r5u8x/A?D(G-KaPdSgVkYp3s6v
+  client-secret-key: gUkXn2r5u8x/A?D(G+KbPeShVmYq3s6v
+  
+
+
+
+

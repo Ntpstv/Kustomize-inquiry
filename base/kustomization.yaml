@@ -4,3 +4,15 @@ kind: Kustomization
 resources:
   - resources/deployment.yaml
   - resources/service.yaml
+
+configMapGenerator:
+- behavior: merge
+  files:
+  - configs/config.yaml
+  name: example-service-configmap-file
+
+secretGenerator:
+- behavior: merge
+  envs:
+  - secrets/secret.env
+  name: example-service-secret-env
