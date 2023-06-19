@@ -6,4 +6,4 @@ resources:
 
 images:
 - name: asia.gcr.io/poc-innovation-iot/example-service
-  newTag: e5d4139c
+  newTag: 31af6384
