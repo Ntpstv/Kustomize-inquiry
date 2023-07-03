@@ -21,6 +21,13 @@ spec:
         - name: example-service
           image: asia.gcr.io/poc-innovation-iot/example-service:TAG
           imagePullPolicy: IfNotPresent
+          envFrom:
+            - secretRef:
+                name: example-service-secret-env
+          volumeMounts:
+              - mountPath: /config/config.yaml
+                name: example-service-configmap-file
+                subPath: config.yaml
           ports:
             - name: http
               containerPort: 8080
@@ -44,3 +51,10 @@ spec:
             requests:
               cpu: 250m
               memory: 64Mi
+      volumes:
+        - name: example-service-secret-file
+          secret:
+            secretName: example-service-secret-file
+        - name: example-service-configmap-file
+          configMap:
+            name: example-service-configmap-file

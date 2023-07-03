@@ -7,3 +7,16 @@ resources:
 images:
 - name: asia.gcr.io/poc-innovation-iot/example-service
   newTag: 0f9ef65a
+
+
+configMapGenerator:
+- behavior: merge
+  files:
+  - configs/config.yaml
+  name: example-service-configmap-file
+
+secretGenerator:
+- behavior: merge
+  envs:
+  - secrets/secret.env
+  name: example-service-secret-env
