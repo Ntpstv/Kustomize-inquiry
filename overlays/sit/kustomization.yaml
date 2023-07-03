@@ -6,7 +6,7 @@ resources:
 
 images:
 - name: asia.gcr.io/poc-innovation-iot/example-service
-  newTag: 0f9ef65a
+  newTag: 535ee164
 
 
 configMapGenerator:
