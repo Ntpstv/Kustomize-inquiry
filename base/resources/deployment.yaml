@@ -46,11 +46,11 @@ spec:
             initialDelaySeconds: 10
           resources:
             limits:
-              cpu: 128m
-              memory: 128Mi
-            requests:
               cpu: 64m
               memory: 64Mi
+            requests:
+              cpu: 32m
+              memory: 32Mi
       volumes:
         - name: example-service-secret-file
           secret:
