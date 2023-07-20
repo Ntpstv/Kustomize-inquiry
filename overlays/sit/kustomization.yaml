@@ -5,6 +5,8 @@ resources:
 - ../../base
 
 images:
+- name: asia.gcr.io/poc-innovation-iot/cicd
+  newTag: 0e6bfc5a
 - name: asia.gcr.io/poc-innovation-iot/example-service
   newTag: 103eda26
 
