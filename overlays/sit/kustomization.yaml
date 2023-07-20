@@ -6,7 +6,7 @@ resources:
 
 images:
 - name: asia.gcr.io/poc-innovation-iot/att-user-inquiry
-  newTag: 37ec1d11
+  newTag: eef74640
 
 
 configMapGenerator:
