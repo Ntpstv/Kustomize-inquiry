@@ -1,30 +1,35 @@
 # don't forget to update config.model
-environment: sit
+environment: local
+
+app:
+  name: test
 
 server:
   port: 8080
-  writetimeout: 15
-  readtimeout: 15
-  idletimeout: 60
-  ctx-timeout: 10
-  force-retry: true
+  timeout: 15
 
 log:
-  environment: dev
+  environment: production
   level: info
+  format: json
+
+
+# kafka:
+#   address: 
+#     - kafka.poc.internal:9092
+#   topic: example-topic
+
 
 postgres:
-  db-name: management_api_gw
-  host: 34.126.178.29
+  host: 172.28.240.42
   port: 5432
-  pool-size: 30
-
-token:
-  type: BEARER
-  expired-in-second: 300
-  refresh-expired-in-second: 86400
-  
+  db-name: att-db
 
 
+redis:
+  address: 172.28.241.3:6379
+  database: 1
+
+product-list-key: ATT_USER_LIST
 
 

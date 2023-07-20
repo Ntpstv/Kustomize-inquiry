@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-service
+  name: att-user-inquiry
   labels:
-    app.kubernetes.io/name: example-service
-    app.kubernetes.io/instance: example-service
+    app.kubernetes.io/name: att-user-inquiry
+    app.kubernetes.io/instance: att-user-inquiry
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: example-service
-      app.kubernetes.io/instance: example-service
+      app.kubernetes.io/name: att-user-inquiry
+      app.kubernetes.io/instance: att-user-inquiry
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: example-service
-        app.kubernetes.io/instance: example-service
+        app.kubernetes.io/name: att-user-inquiry
+        app.kubernetes.io/instance: att-user-inquiry
     spec:
       containers:
-        - name: example-service
-          image: asia.gcr.io/poc-innovation-iot/example-service:TAG
+        - name: att-user-inquiry
+          image: asia.gcr.io/poc-innovation-iot/att-user-inquiry:TAG
           imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
-                name: example-service-secret-env
+                name: att-user-inquiry-secret-env
           volumeMounts:
               - mountPath: /config/config.yaml
-                name: example-service-configmap-file
+                name: att-user-inquiry-configmap-file
                 subPath: config.yaml
           ports:
             - name: http
@@ -52,9 +52,9 @@ spec:
               cpu: 32m
               memory: 32Mi
       volumes:
-        - name: example-service-secret-file
+        - name: att-user-inquiry-secret-file
           secret:
-            secretName: example-service-secret-file
-        - name: example-service-configmap-file
+            secretName: att-user-inquiry-secret-file
+        - name: att-user-inquiry-configmap-file
           configMap:
-            name: example-service-configmap-file
+            name: att-user-inquiry-configmap-file
